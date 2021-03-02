@@ -1,0 +1,66 @@
+/* reset */
+html, body {
+  margin: 0;
+  background-image: url(../img/spikes.png);
+}
+
+.pembungkus {
+  width: 800px;
+  margin: 0px auto;
+  background-color: rgb(253, 253, 253);
+  border-right: 1px solid rgb(179, 177, 177);
+  border-left: 1px solid rgb(179, 177, 177);
+}
+
+
+/* header */
+header {
+  text-align: center;
+  padding-top: 30px; 
+  padding-bottom: 10px;
+  background-color: rgb(179, 177, 177);
+  line-height: 18px;
+}
+header img {
+  width: 120px;
+  border-radius: 50%;
+}
+header p {
+  color: white;
+}
+
+
+
+/* tentang */
+.container {
+  width: 700px;
+  margin: 20px auto 50px;
+}
+.container hr {
+  width: 250px;
+}
+.tentang h2 {
+  text-align: center;
+}
+.tentang p {
+  text-align: justify;
+}
+.italic {
+  font-style: italic;
+}
+
+
+
+/* footer */
+footer {
+  background-color: rgb(179, 177, 177);
+  height: 50px;
+}
+footer p {
+  text-align: center;
+  line-height: 50px;
+}
+footer p i a {
+  text-decoration: none;
+  color: white;
+}
