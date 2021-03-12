@@ -38,6 +38,16 @@
     margin-top: 100px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
+    /* tambahan */
+    opacity: 0;
+    transform: translate(0, -150px);
+    transition: 2.6s;
+}
+
+/* tambahan */
+.jumbotron .display-4.tMuncul {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 .jumbotron .display-4 span {
@@ -54,6 +64,17 @@
     border-radius: 12px;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.6);
 }
+.info-panel .y {
+    /* tambahan */
+    opacity: 0;
+    transform: translate(0, -20px);
+    transition: 2s;
+}
+
+.info-panel .y.iMuncul {
+    opacity: 1;
+    transform: translate(0,0);
+}
 
 .info-panel h4 {
     font-size: 16px;
@@ -69,7 +90,6 @@
 }
 
 
-
 /* Workingspace */
 .workingspace {
     margin-top: 120px;
@@ -78,12 +98,31 @@
 
 .workingspace img {
     margin-bottom: 20px;
+    /* tambahan */
+    opacity: 0;
+    transform: translate(0, -50px);
+    transition: 2s;
+}
+
+/* tambahan */
+.workingspace .img-fluid.gMuncul {
+    opacity: 1;
+    transform: translate(0,0);
 }
 
 .workingspace h2 {
     font-size: 52px;
     text-transform: uppercase;
     font-weight: 200;
+    /* tambahan */
+    opacity: 0;
+    transform: translate(200px, 0);
+    transition: 2.2s;
+}
+/* tambahan */
+.workingspace h2.workingspaceMuncul {
+    opacity: 1;
+    transform: translate(0,0);
 }
 
 .workingspace h2 span {
@@ -94,6 +133,15 @@
     font-size: 18px;
     color: #ACACAC;
     font-weight: 200;
+    /* tambahan */
+    opacity: 0;
+    transform: translate(200px, 0);
+    transition: 2.2s;
+}
+/* tambahan */
+.workingspace p.workingspaceMuncul {
+    opacity: 1;
+    transform: translate(0,0);
 }
 
 
@@ -137,6 +185,11 @@
     font-style: normal;
 }
 
+/* tambahan */
+.testimonial .d-flex img:hover {
+    transform: translate(0,-10px);
+    transition: 0.5s;
+}
 
 
 /* Utility */
