@@ -1,4 +1,4 @@
-// Nama : Riki Widiantoro & Savina Lutfia N.
+// Nama : Riki Widiantoro | NIM : 18532969
 // Kelompok 6 | Kelas 6C | Teknik Informatika
 
 // 1. membuat event ketika join us menggetikkan nama
