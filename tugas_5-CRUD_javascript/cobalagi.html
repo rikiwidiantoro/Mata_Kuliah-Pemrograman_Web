@@ -9,6 +9,10 @@
         .container {
             text-align: center;
             margin-top: 70px;
+            margin-bottom: 50px;
+        }
+        table {
+            margin: auto;
         }
     </style>
 </head>
@@ -23,17 +27,44 @@
         <br><br>
         <button>tambah</button>
     </div>
-    <table border="1"></table>
+    <table border="1" width="40%">
+        <tr>
+            <th>Nama Barang</th>
+            <th>Harga</th>
+            <th>Aksi</th>
+        </tr>
+    </table>
+
+    <button class="edit">Edit</button>
+    <button class="hapus">Hapus</button>
 
     <script>
 
+        let dataBarang = [
+            {
+                nama: "spidol",
+                harga: "1000"
+            },
+            {
+                nama: "buku",
+                harga: "2000"
+            }
+        ];
+
+        // membuat + menampilkan data
         const tambah = document.querySelector('.container button');
         let tabel = document.querySelector('table');
+
+        dataBarang.forEach(m => {
+            tabel.innerHTML += `<tr><td>${m.nama}</td><td>${m.harga}</td><td>edithapus</td></tr>`;
+        });
+
+
         tambah.addEventListener('click', function() {
             let input = document.querySelector('.container .nama').value;
             let harga = document.querySelector('.container .harga').value;
 
-            tabel.innerHTML = `<tr><td>${input}</td><td>${harga}</td></tr>`;
+            tabel.innerHTML += `<tr><td>${input}</td><td>${harga}</td><td>edithapus</td></tr>`;
         });
 
     </script>
