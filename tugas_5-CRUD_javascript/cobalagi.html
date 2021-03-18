@@ -19,10 +19,23 @@
 <body>
     
     <div class="container">
-        <label for="nama">Nama barang :</label>
+        <h1>CRUD Data Barang di Supermarket</h1>
+        <br>
+        <label for="nama">Nama barang</label>
+        <br>
         <input type="text" id="nama" class="nama">
         <br><br>
-        <label for="harga">Harga :</label>
+        <label for="kategori">Kategori</label>
+        <br>
+        <select name="kategori" id="kategori">
+            <option value="">makanan</option>
+            <option value="">minuman</option>
+            <option value="">camilan</option>
+            <option value="">kecantikan</option>
+        </select>
+        <br><br>
+        <label for="harga">Harga</label>
+        <br>
         <input type="text" id="harga" class="harga">
         <br><br>
         <button>tambah</button>
@@ -34,9 +47,6 @@
             <th>Aksi</th>
         </tr>
     </table>
-
-    <button class="edit">Edit</button>
-    <button class="hapus">Hapus</button>
 
     <script>
 
@@ -52,20 +62,44 @@
         ];
 
         // membuat + menampilkan data
-        const tambah = document.querySelector('.container button');
         let tabel = document.querySelector('table');
 
+        let tEdit = `<button class="edit">Edit</button>`;
+        let tHapus = `<button class="hapus">Hapus</button>`;
+
         dataBarang.forEach(m => {
-            tabel.innerHTML += `<tr><td>${m.nama}</td><td>${m.harga}</td><td>edithapus</td></tr>`;
+            tabel.innerHTML += `<tr><td>${m.nama}</td><td>${m.harga}</td><td>${tEdit}${tHapus}</td></tr>`;
         });
 
 
+        // tambah barang
+        const tambah = document.querySelector('.container button');
         tambah.addEventListener('click', function() {
             let input = document.querySelector('.container .nama').value;
             let harga = document.querySelector('.container .harga').value;
 
-            tabel.innerHTML += `<tr><td>${input}</td><td>${harga}</td><td>edithapus</td></tr>`;
+            tabel.innerHTML += `<tr><td>${input}</td><td>${harga}</td><td>${tEdit}${tHapus}</td></tr>`;
         });
+
+
+        // edit barang
+        const edit = document.querySelectorAll('.edit');
+        for(f of edit) {
+            f.addEventListener('click', function() {
+                
+            });
+        }
+
+
+        // hapus barang
+        const hapus = document.querySelectorAll('.hapus');
+        for( h of hapus ) {
+            h.addEventListener('click', function() {
+                
+            });
+        }
+
+
 
     </script>
 
