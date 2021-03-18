@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container, #tabel2 {
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <label for="barang">Nama Barang :</label>
+        <input type="text" name="barang" class="input" placeholder="masukkan nama barang...">
+        <br><br>
+        <label for="harga">Harga</label>
+        <input type="text" name="harga" class="harga">
+    
+        <button onclick="tambahBarang()">Tambah</button>
+    </div>
+        
+
+    <table id="tabel2" border="1">
+        <!-- <tr>
+            <th>No</th>
+            <th>Nama Barang</th>
+            <th>Aksi</th>
+        </tr> -->
+        <!-- <tr>
+            <td>1</td>
+            <td>Spidol</td>
+            <td><button>edit</button><button>hapus</button></td>
+        </tr> -->
+    </table>
+
+
+    <script>
+        var dataBarang = [
+            {
+                nama: "spidol",
+                harga: "2000"
+            }, 
+            {
+                nama: "buku",
+                harga: "3000"
+            }];
+
+        
+function tampilBarang() {
+    var tabel2 = document.querySelector('#tabel2');
+    tabel2.innerHTML = "<tr><th>No</th><th>Nama Barang</th><th>Harga</th><th>Aksi</th></tr>";
+
+
+    dataBarang.forEach((m, i) => {
+            
+        var tEdit = "<button onclick='ubahBarang(" + m + ")'>Edit</button>";
+        var tHapus = "<button onclick='hapusBarang(" + m + ")'>Hapus</button>";
+        
+        tabel2.innerHTML += `<tr><td>${m, i + 1}</td><td> ${m.nama} </td><td> ${m.harga}</td><td>${tEdit}${tHapus}</td></tr>`;
+        
+    });
+
+    
+    
+}
+function tambahBarang() {
+        var input = document.querySelector('.input').value;
+        var iHarga = document.querySelector('.harga').value;
+        
+        // alert('barang: ' + input + '. harga: ' + iHarga);
+
+        tabel2.insertBefore(show());
+
+        function show() {
+            tabel2.innerHTML = "<tr><td>1</td><td>" + input + "</td><td>"+ iHarga +"</td><td></td></tr>";
+        }
+
+
+        // dataBarang.push(input.value);
+        // dataBarang.push(iHarga.value);
+        // input.value = "";
+        // iHarga.value = "";
+        
+}
+
+
+
+// function tambahBarang() {
+//     var input = document.querySelector('.input').value;
+//     var iHarga = document.querySelector('.harga').value;
+    
+//     // dataBarang.push(input.value);
+//     input.value = "";
+//     tampilBarang();
+// }
+
+// function ubahBarang(id) {
+//     var baru = prompt('Edit :' + dataBarang[id]);
+//     dataBarang[id] = baru;
+//     tampilBarang();
+// }
+
+// function hapusBarang() {
+
+// }
+tampilBarang();
+    </script>
+</body>
+</html>
