@@ -72,22 +72,19 @@ function tampilBarang() {
     
 }
 function tambahBarang() {
-        var input = document.querySelector('.input').value;
-        var iHarga = document.querySelector('.harga').value;
-        
-        // alert('barang: ' + input + '. harga: ' + iHarga);
+    var input = document.querySelector('.input').value;
+    var iHarga = document.querySelector('.harga').value;
+    
+    alert('barang: ' + input + '. harga: ' + iHarga);
 
-        tabel2.insertBefore(show());
-
-        function show() {
-            tabel2.innerHTML = "<tr><td>1</td><td>" + input + "</td><td>"+ iHarga +"</td><td></td></tr>";
-        }
+    // tabel2.innerHTML = "<tr><td>1</td><td>" + input + "</td><td>"+ iHarga +"</td><td></td></tr>";
 
 
-        // dataBarang.push(input.value);
-        // dataBarang.push(iHarga.value);
-        // input.value = "";
-        // iHarga.value = "";
+    // dataBarang.push(input.value);
+    // dataBarang.push(iHarga.value);
+    // input.value = "";
+    // iHarga.value = "";
+    tampilBarang();
         
 }
 
