@@ -125,13 +125,13 @@
                 h.addEventListener('click', function(ha) {
                     let a = confirm('Anda yakin ingin menghapus?');
                     let barisTabel = tabel.rows.length;
-                    let pn = h.parentNode.parentNode;
+                    // let pn = h.parentNode.parentNode;
                     if ( ha = a ) {
-                        console.log(pn);
-                        pn = pn - 1;
-                        tabel.deleteRow(pn);
-                        // barisTabel = barisTabel - 1;
-                        // tabel.deleteRow(barisTabel);
+                        // console.log(pn);
+                        // pn = pn - 1;
+                        // tabel.deleteRow(pn);
+                        barisTabel = barisTabel - 1;
+                        tabel.deleteRow(barisTabel);
                     } else {
                         console.log('salah');
                     }
