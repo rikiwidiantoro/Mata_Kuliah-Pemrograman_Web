@@ -25,14 +25,11 @@
         <br>
         <input type="text" id="nama" class="nama">
         <br><br>
-        <label for="kategori">Kategori</label>
-        <br>
-        <select name="kategori" id="kategori">
-            <option value="">makanan</option>
-            <option value="">minuman</option>
-            <option value="">camilan</option>
-            <option value="">kecantikan</option>
-        </select>
+        <!-- <select name="kategori" id="kategori" class="kategori">
+            <option value="" class="kat">makanan</option>
+            <option value="" class="kat">minuman</option>
+            <option value="" class="kat">camilan</option>
+        </select> -->
         <br><br>
         <label for="harga">Harga</label>
         <br>
@@ -40,7 +37,7 @@
         <br><br>
         <button>tambah</button>
     </div>
-    <table border="1" width="40%">
+    <table border="1" width="40%" id="tabel">
         <tr>
             <th>Nama Barang</th>
             <th>Harga</th>
@@ -53,10 +50,12 @@
         let dataBarang = [
             {
                 nama: "spidol",
+                kategori: "makanan",
                 harga: "1000"
             },
             {
                 nama: "buku",
+                kategori: "minuman",
                 harga: "2000"
             }
         ];
@@ -68,6 +67,7 @@
         let tHapus = `<button class="hapus">Hapus</button>`;
 
         dataBarang.forEach(m => {
+            
             tabel.innerHTML += `<tr><td>${m.nama}</td><td>${m.harga}</td><td>${tEdit}${tHapus}</td></tr>`;
         });
 
@@ -77,9 +77,26 @@
         tambah.addEventListener('click', function() {
             let input = document.querySelector('.container .nama').value;
             let harga = document.querySelector('.container .harga').value;
+            // let kate = document.querySelectorAll('container .kategori .kat').values();
+            
+            // let pil = "";
+            // for ( k of kate ) {
+            //     k = pil;
+            // }
+
+            // kategori.forEach(k => {
+            //     // let kat = k;
+            //     tabel.innerHTML += `<tr><td>${input}</td><td>${k}</td><td>${harga}</td><td>${tEdit}${tHapus}</td></tr>`;
+            // });
 
             tabel.innerHTML += `<tr><td>${input}</td><td>${harga}</td><td>${tEdit}${tHapus}</td></tr>`;
+
+
+            // hapus
+            hapusBarang();
+            
         });
+        hapusBarang();
 
 
         // edit barang
@@ -92,12 +109,24 @@
 
 
         // hapus barang
-        const hapus = document.querySelectorAll('.hapus');
-        for( h of hapus ) {
-            h.addEventListener('click', function() {
-                
-            });
+        // const hapus = document.querySelectorAll('.hapus');
+        // for( h of hapus ) {
+        //     h.addEventListener('click', function() {
+        //         console.log(h);
+        //     });
+        // }
+        // function hapusBarang() {
+        //     dataBarang.splice();
+        // }
+        function hapusBarang() {
+            const hapus = document.querySelectorAll('.hapus');
+            for( h of hapus ) {
+                h.addEventListener('click', function() {
+                    console.log(h);
+                });
+            }
         }
+
 
 
 
