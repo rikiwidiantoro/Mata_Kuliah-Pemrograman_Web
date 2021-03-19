@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Toko Riki</title>
     <style>
         .container {
             text-align: center;
@@ -17,9 +17,11 @@
     </style>
 </head>
 <body>
+
+    <!-- Nama : Riki Widiantoro | 18532969 | Kelompok 6 | Teknik Informatika 6C -->
     
     <div class="container">
-        <h1>CRUD Data Barang di Supermarket</h1>
+        <h1>CRUD Data Barang di Toko Riki</h1>
         <br>
         <label for="nama">Nama barang</label>
         <br>
@@ -30,7 +32,6 @@
             <option value="" class="kat">minuman</option>
             <option value="" class="kat">camilan</option>
         </select> -->
-        <br><br>
         <label for="harga">Harga</label>
         <br>
         <input type="text" id="harga" class="harga">
@@ -121,8 +122,19 @@
         function hapusBarang() {
             const hapus = document.querySelectorAll('.hapus');
             for( h of hapus ) {
-                h.addEventListener('click', function() {
-                    console.log(h);
+                h.addEventListener('click', function(ha) {
+                    let a = confirm('Anda yakin ingin menghapus?');
+                    let barisTabel = tabel.rows.length;
+                    let pn = h.parentNode.parentNode;
+                    if ( ha = a ) {
+                        console.log(pn);
+                        pn = pn - 1;
+                        tabel.deleteRow(pn);
+                        // barisTabel = barisTabel - 1;
+                        // tabel.deleteRow(barisTabel);
+                    } else {
+                        console.log('salah');
+                    }
                 });
             }
         }
