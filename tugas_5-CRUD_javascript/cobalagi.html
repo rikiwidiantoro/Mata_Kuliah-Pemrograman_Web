@@ -22,7 +22,6 @@
     
     <div class="container">
         <h1>CRUD Data Barang di Toko Riki</h1>
-        <br>
         <label for="nama">Nama barang</label>
         <br>
         <input type="text" id="nama" class="nama">
@@ -37,6 +36,7 @@
         <input type="text" id="harga" class="harga">
         <br><br>
         <button>tambah</button>
+
     </div>
     <table border="1" width="40%" id="tabel">
         <tr>
@@ -72,12 +72,19 @@
             tabel.innerHTML += `<tr><td>${m.nama}</td><td>${m.harga}</td><td>${tEdit}${tHapus}</td></tr>`;
         });
 
+        // // form reset
+        // function inputReset() {
+        //         document.querySelector(".container").reset();
+        // }
+        
+        
 
         // tambah barang
         const tambah = document.querySelector('.container button');
         tambah.addEventListener('click', function() {
             let input = document.querySelector('.container .nama').value;
             let harga = document.querySelector('.container .harga').value;
+            
             // let kate = document.querySelectorAll('container .kategori .kat').values();
             
             // let pil = "";
@@ -92,12 +99,20 @@
 
             tabel.innerHTML += `<tr><td>${input}</td><td>${harga}</td><td>${tEdit}${tHapus}</td></tr>`;
 
+            // // form reset
+            
+            // input.reset();
+            // harga.reset();
+            // inputReset();
 
-            // hapus
+
+            // // // hapus
             hapusBarang();
             
         });
         hapusBarang();
+
+        
 
 
         // edit barang
