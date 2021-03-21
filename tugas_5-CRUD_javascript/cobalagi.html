@@ -140,10 +140,10 @@
         <h4 style="text-align: center;">Pengumuman</h4>
         <p>Terima kasih telah mencoba program yang sudah saya buat. Dalam program CRUD ini terdapat beberapa bug atau masalah yang belum dapat saya selesaikan dengan logika pemrograman saya menggunakan javascript. seperti :</p>
         <ol>
-            <li>waktu menghapus (delete) bisa menghapus akan tetapi yang dihapus adalah baris yang terakhir, bukan baris yang diklik.</li>
             <li>waktu edit data, bisa memunculkan pop up edit lalu bisa menambahkan data yang telah di edit, namun bug atau masalah nya adalah tidak bisa menghapus data yang telah ter edit tadi, jadi sama saja dengan waktu tambah/create.</li>
+            <li>opsi hapus data sudah bisa akan tetapi terdapat bug atau masalah saat menghapus data, contoh jika hendak menghapus kode A kadang berhasil, kadang juga yang terhapus malah data B.</li>
         </ol>
-        <p>Demikian informasi yang dapat saya sampaikan, mungkin untuk revisi atau cara untuk menangani bug program CRUD atau ada beberapa saran lain mengenai saya dapat dikirim melalui email <span>rikitoro22@gmail.com</span> atau lewat sosmed dibawah!. Terima kasih.</p>
+        <p>Demikian informasi yang dapat saya sampaikan, mungkin untuk revisi atau cara untuk menangani bug program CRUD atau ada beberapa saran lain mengenai program saya dapat dikirim melalui email <span>rikitoro22@gmail.com</span>. Terima kasih.</p>
     </div>
     <!-- akhir penggumuman -->
 
@@ -175,7 +175,6 @@
         let tHapus = `<button class="hapus">Hapus</button>`;
 
         dataBarang.forEach(m => {
-            
             tabel.innerHTML += `<tr><td>${m.nama}</td><td>${m.harga}</td><td>${tEdit}${tHapus}</td></tr>`;
         });
 
@@ -232,24 +231,26 @@
 
         function editBarang() {
             let editTombol = document.querySelector('.popup-wrapper .popup-container .input-group button');
-            let tombolEditTabel = document.querySelectorAll('.edit');
+            let tombolEditTabel = document.querySelectorAll('.edit a');
             
             editTombol.addEventListener('click', function() {
                 let editNama = document.querySelector('.popup-wrapper .popup-container .input-group .nEdit').value;
                 let editHarga = document.querySelector('.popup-wrapper .popup-container .input-group .hEdit').value;
 
                 // yg dihapus
-                for ( eh of tombolEditTabel) {
-                    let barisEditHapus = eh.parentNode.parentNode.rowIndex;
-                    if ( eh = true ) {
-                        console.log(barisEditHapus);
-                        // barisEditHapus = barisEditHapus - 1;
-                        // tabel.deleteRow(barisEditHapus);
-                    }
-                    
-                    // barisEditHapus = barisEditHapus - 1;
-                    // tabel.deleteRow(barisEditHapus);
+                for ( let f = 1; f <= tombolEditTabel; f++ ) {
+                    let barisEditHapus = f;
+                    console.log(barisEditHapus);
                 }
+
+
+                // for ( eh of tombolEditTabel) {
+                //     // let barisEditHapus = eh.parentNode.parentNode.rowIndex;
+                //     console.log(eh);
+                    
+                //     // barisEditHapus = barisEditHapus - 1;
+                //     // tabel.deleteRow(barisEditHapus);
+                // }
                 
                 
                 // while ( ed = true ) {
