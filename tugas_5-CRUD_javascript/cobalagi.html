@@ -17,8 +17,11 @@
         table {
             margin: auto;
         }
+        .aksi {
+            text-align: center;
+        }
         .pengumuman {
-            width: 600px;
+            width: 50%;
             margin: auto;
             border: 1px solid black;
             padding: 0px 20px;
@@ -46,8 +49,6 @@
             bottom:0;
             margin:0;
             z-index: 99999999999;
-            -webkit-transition:all 1s;
-            -moz-transition:all 1s;
             transition:all 1s;
         }
 
@@ -111,11 +112,11 @@
 
 
     <!-- awal tabel -->
-    <table border="1" width="40%" id="tabel">
+    <table border="1" width="400" id="tabel" cellpadding="5">
         <tr>
             <th>Nama Barang</th>
             <th>Harga</th>
-            <th>Aksi</th>
+            <th width="120">Aksi</th>
         </tr>
     </table>
     <!-- akhir tabel -->
@@ -140,8 +141,9 @@
         <h4 style="text-align: center;">Pengumuman</h4>
         <p>Terima kasih telah mencoba program yang sudah saya buat. Dalam program CRUD ini terdapat beberapa bug atau masalah yang belum dapat saya selesaikan dengan logika pemrograman saya menggunakan javascript. seperti :</p>
         <ol>
-            <li>waktu edit data, bisa memunculkan pop up edit lalu bisa menambahkan data yang telah di edit, namun bug atau masalah nya adalah tidak bisa menghapus data yang telah ter edit tadi, jadi sama saja dengan waktu tambah/create.</li>
-            <li>opsi hapus data sudah bisa akan tetapi terdapat bug atau masalah saat menghapus data, contoh jika hendak menghapus kode A kadang berhasil, kadang juga yang terhapus malah data B.</li>
+            <li>waktu edit data, bisa memunculkan pop up edit lalu bisa menambahkan data yang telah di edit, namun bug atau masalah nya adalah data yang terhapus setelah di edit bukan data yang bersangkutan kadang, akan tetapi data lain.</li>
+            <li>opsi hapus data sudah bisa akan tetapi terdapat bug atau masalah saat menghapus data, contoh jika hendak menghapus data A kadang berhasil, kadang juga yang terhapus malah data B.</li>
+            <li>jadi mungkin ini ada kesalahan pada index nya atau bagaimana saya juga kurang tahu.</li>
         </ol>
         <p>Demikian informasi yang dapat saya sampaikan, mungkin untuk revisi atau cara untuk menangani bug program CRUD atau ada beberapa saran lain mengenai program saya dapat dikirim melalui email <span>rikitoro22@gmail.com</span>. Terima kasih.</p>
     </div>
@@ -175,7 +177,7 @@
         let tHapus = `<button class="hapus">Hapus</button>`;
 
         dataBarang.forEach(m => {
-            tabel.innerHTML += `<tr><td>${m.nama}</td><td>${m.harga}</td><td>${tEdit}${tHapus}</td></tr>`;
+            tabel.innerHTML += `<tr><td>${m.nama}</td><td class="aksi">${m.harga}</td><td class="aksi">${tEdit} ${tHapus}</td></tr>`;
         });
 
         // // form reset
@@ -203,7 +205,7 @@
             //     tabel.innerHTML += `<tr><td>${input}</td><td>${k}</td><td>${harga}</td><td>${tEdit}${tHapus}</td></tr>`;
             // });
 
-            tabel.innerHTML += `<tr><td>${input}</td><td>${harga}</td><td>${tEdit}${tHapus}</td></tr>`;
+            tabel.innerHTML += `<tr><td>${input}</td><td class="aksi">${harga}</td><td class="aksi">${tEdit} ${tHapus}</td></tr>`;
 
             // // form reset
             
@@ -231,17 +233,15 @@
 
         function editBarang() {
             let editTombol = document.querySelector('.popup-wrapper .popup-container .input-group button');
-            let tombolEditTabel = document.querySelectorAll('.edit a');
+            let tombolEditTabel = document.querySelector('.edit');
             
             editTombol.addEventListener('click', function() {
                 let editNama = document.querySelector('.popup-wrapper .popup-container .input-group .nEdit').value;
                 let editHarga = document.querySelector('.popup-wrapper .popup-container .input-group .hEdit').value;
 
                 // yg dihapus
-                for ( let f = 1; f <= tombolEditTabel; f++ ) {
-                    let barisEditHapus = f;
-                    console.log(barisEditHapus);
-                }
+                let ppp = tombolEditTabel.parentNode.parentNode.rowIndex;
+                tabel.deleteRow(ppp);
 
 
                 // for ( eh of tombolEditTabel) {
@@ -260,7 +260,7 @@
 
 
                 // yg di edit
-                tabel.innerHTML += `<tr><td>${editNama}</td><td>${editHarga}</td><td>${tEdit}${tHapus}</td></tr>`;
+                tabel.innerHTML += `<tr><td>${editNama}</td><td class="aksi">${editHarga}</td><td class="aksi">${tEdit} ${tHapus}</td></tr>`;
                 
                 hapusBarang();
             });
