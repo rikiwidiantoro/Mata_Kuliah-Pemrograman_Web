@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- pastikan untuk terhubung dengan koneksi internet untuk font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>CRUD Toko Riki Savina</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 50px;
+        }
+        table {
+            margin: auto;
+        }
+        .aksi {
+            text-align: center;
+        }
+        .pengumuman {
+            width: 50%;
+            margin: auto;
+            border: 1px solid black;
+            padding: 0px 20px;
+            text-align: justify;
+        }
+        .footer {
+            text-align: center;
+            margin: 25px auto 50px;
+        }
+
+        /* awal pop up */
+        #popup {
+            visibility: hidden;
+            opacity: 0;
+            margin-top: -200px;
+        }
+        #popup:target {
+            visibility:visible;
+            opacity: 1;
+            background-color: rgba(255,255,255,0.8);
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:0;
+            z-index: 99999999999;
+            transition:all 1s;
+        }
+
+        @media (min-width: 768px){
+            .popup-container {
+                width:600px;
+            }
+        }
+        @media (max-width: 767px){
+            .popup-container {
+                width:100%;
+            }
+        }
+        .popup-container {
+            position: relative;
+            margin:7% auto;
+            padding:30px 50px;
+            background-color: #333;
+            color:#fff;
+            border-radius: 3px;
+        }
+
+        a.popup-close {
+            position: absolute;
+            top:3px;
+            right:3px;
+            background-color: #fff;
+            padding:7px 10px;
+            font-size: 20px;
+            text-decoration: none;
+            line-height: 1;
+            color:#333;
+        }
+        /* akhir pop up */
+    </style>
+</head>
+<body>
+
+    <!-- Nama : Riki Widiantoro | 18532969 | Kelompok 6 | Teknik Informatika 6C -->
+    <!-- Nama : Savina Lutfia N | 18532976 | Kelompok 6 | Teknik Informatika 6C -->
+    
+    <!-- awal input -->
+    <div class="container">
+        <h1>CRUD Data Barang di Toko Riki Savina</h1>
+        <label for="nama">Nama barang</label>
+        <br>
+        <input type="text" id="nama" class="nama">
+        <br><br>
+        <!-- <select name="kategori" id="kategori" class="kategori">
+            <option value="" class="kat">makanan</option>
+            <option value="" class="kat">minuman</option>
+            <option value="" class="kat">camilan</option>
+        </select> -->
+        <label for="harga">Harga</label>
+        <br>
+        <input type="text" id="harga" class="harga">
+        <br><br>
+        <button>tambah</button>
+
+    </div>
+    <!-- akhir input -->
+
+
+    <!-- awal tabel -->
+    <table border="1" width="400" id="tabel" cellpadding="5">
+        <tr>
+            <th>Nama Barang</th>
+            <th>Harga</th>
+            <th width="120">Aksi</th>
+        </tr>
+    </table>
+    <!-- akhir tabel -->
+
+
+    <!-- awal pop up edit -->
+    <div class="popup-wrapper" id="popup">
+        <div class="popup-container">
+            <h3>Edit Data Barang</h3>
+            <div class="input-group">
+                <input class="nEdit" type="text" placeholder="Nama barang">
+                <input class="hEdit" type="text" placeholder="Harga">
+                <button><a href="#closed">Edit</a></button>
+            </div>
+            <a href="#closed" class="popup-close">X</a>
+        </div>
+    </div>
+    <!-- akhir pop up edit -->
+
+    <!-- penggumuman -->
+    <div class="pengumuman">
+        <h4 style="text-align: center;">Pengumuman</h4>
+        <p>Terima kasih telah mencoba program yang sudah saya buat. Dalam program CRUD ini terdapat beberapa bug atau masalah yang belum dapat saya selesaikan dengan logika pemrograman saya menggunakan javascript. seperti :</p>
+        <ol>
+            <li>waktu edit data semua normal, namun bug atau masalah nya adalah terkadang data yang terhapus setelah di edit bukan data yang bersangkutan, akan tetapi data lain.</li>
+            <li>opsi hapus data sudah bisa akan tetapi terdapat bug atau masalah saat menghapus data, contoh jika hendak menghapus data A kadang berhasil, kadang juga yang terhapus malah data B.</li>
+            <li>jadi mungkin ini ada kesalahan pada index nya atau bagaimana saya juga kurang tahu.</li>
+        </ol>
+        <p>Demikian informasi yang dapat saya sampaikan, mungkin untuk revisi atau cara untuk menangani bug program CRUD atau ada beberapa saran lain mengenai program saya dapat dikirim melalui email <span>rikitoro22@gmail.com</span>. Terima kasih.</p>
+    </div>
+    <!-- akhir penggumuman -->
+
+    <!-- awal footer -->
+    <div class="footer">
+        <p>&copy Copyright 2021 | 6C | Riki Widiantoro 18532969 | Savina Lutfia N 18532976 | <i class="fab fa-github-square"></i> <a href="https://github.com/Riki-Toro" target="_blank">Riki-Toro</a>  |  <i class="fab fa-instagram-square"> @riki_widian</i> |  <i class="fab fa-instagram-square"> @saviinalutfinas</i></p>
+    </div>
+    <!-- akhir footer -->
+
+    <script>
+        // data awal dalam bentuk array
+        let dataBarang = [
+            {
+                nama: "spidol",
+                harga: "1000"
+            },
+            {
+                nama: "buku",
+                harga: "2000"
+            },
+            {
+                nama: "roti",
+                harga: "1500"
+            }
+        ];
+
+        // membuat + menampilkan data
+        let tabel = document.querySelector('table');
+
+        let tEdit = `<button class="edit"><a href="#popup" class="popup-link">Edit</a></button>`;
+        let tHapus = `<button class="hapus">Hapus</button>`;
+
+        dataBarang.forEach(m => {
+            tabel.innerHTML += `<tr><td>${m.nama}</td><td class="aksi">Rp.${m.harga}</td><td class="aksi">${tEdit} ${tHapus}</td></tr>`;
+        });
+
+        // // form reset
+        // function inputReset() {
+        //         document.querySelector(".container").reset();
+        // }
+        
+        
+
+        // tambah barang
+        const tambah = document.querySelector('.container button');
+        tambah.addEventListener('click', function() {
+            let input = document.querySelector('.container .nama').value;
+            let harga = document.querySelector('.container .harga').value;
+            
+            // let kate = document.querySelectorAll('container .kategori .kat').values();
+            
+            // let pil = "";
+            // for ( k of kate ) {
+            //     k = pil;
+            // }
+
+            // kategori.forEach(k => {
+            //     // let kat = k;
+            //     tabel.innerHTML += `<tr><td>${input}</td><td>${k}</td><td>${harga}</td><td>${tEdit}${tHapus}</td></tr>`;
+            // });
+
+            tabel.innerHTML += `<tr><td>${input}</td><td class="aksi">Rp.${harga}</td><td class="aksi">${tEdit} ${tHapus}</td></tr>`;
+
+            // // form reset
+            
+            // input.reset();
+            // harga.reset();
+            // inputReset();
+
+
+            // // // hapus
+            hapusBarang();
+            
+        });
+        hapusBarang();
+
+        
+
+
+        // edit barang
+        // const edit = document.querySelectorAll('.edit');
+        // for(f of edit) {
+        //     f.addEventListener('click', function() {
+        //         // let form1 = prompt('Masukkan nama barang : ');
+        //     });
+        // }
+
+        function editBarang() {
+            let editTombol = document.querySelector('.popup-wrapper .popup-container .input-group button');
+            let tombolEditTabel = document.querySelector('.edit');
+            
+            editTombol.addEventListener('click', function() {
+                let editNama = document.querySelector('.popup-wrapper .popup-container .input-group .nEdit').value;
+                let editHarga = document.querySelector('.popup-wrapper .popup-container .input-group .hEdit').value;
+
+                // yg dihapus
+                let ppp = tombolEditTabel.parentNode.parentNode.rowIndex;
+                tabel.deleteRow(ppp);
+
+
+                // for ( eh of tombolEditTabel) {
+                //     // let barisEditHapus = eh.parentNode.parentNode.rowIndex;
+                //     console.log(eh);
+                    
+                //     // barisEditHapus = barisEditHapus - 1;
+                //     // tabel.deleteRow(barisEditHapus);
+                // }
+                
+                
+                // while ( ed = true ) {
+                //     barisEditHapus = barisEditHapus - 1;
+                //     baris.deleteRow(barisEditHapus);
+                // }
+
+
+                // yg di edit
+                tabel.innerHTML += `<tr><td>${editNama}</td><td class="aksi">Rp.${editHarga}</td><td class="aksi">${tEdit} ${tHapus}</td></tr>`;
+                
+                hapusBarang();
+            });
+        }
+        editBarang();
+
+
+        // hapus barang
+        // const hapus = document.querySelectorAll('.hapus');
+        // for( h of hapus ) {
+        //     h.addEventListener('click', function() {
+        //         console.log(h);
+        //     });
+        // }
+        // function hapusBarang() {
+        //     dataBarang.splice();
+        // }
+        function hapusBarang() {
+            const hapus = document.querySelectorAll('.hapus');
+            for( h of hapus ) {
+                h.addEventListener('click', function(ha) {
+                    let a = confirm('Anda yakin ingin menghapus?');
+                    let barisTabel = h.parentNode.parentNode.rowIndex;
+                    if ( ha = a ) {
+                        barisTabel = barisTabel - 1;
+                        tabel.deleteRow(barisTabel);
+                    } else {
+                        console.log('salah');
+                    }
+                });
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>
