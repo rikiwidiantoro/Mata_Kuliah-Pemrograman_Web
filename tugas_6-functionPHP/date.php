@@ -1,7 +1,7 @@
 <?php
 // Nama = Riki Widiantoro & Savina Lutfia N
 // Kelompok 6 | kelas 6C
-echo "<h2>Riki Widiantoro & Savina Lutfia N | kelompok 6 | kelas 6C</h2>";
+echo "<h2>Riki Widiantoro (18532969) & Savina Lutfia N. (18532976) | kelompok 6 | kelas 6C</h2>";
 
 // date()
 // untuk mengetahui hari, tanggal, bulan dan tahun dengan parameter hari=l, tanggal=d, bulan=m, tahun=y
