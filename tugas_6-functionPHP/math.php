@@ -1,7 +1,7 @@
 <?php
 // Nama = Riki Widiantoro & Savina Lutfia N
 // Kelompok 6 | kelas 6C
-echo "<h2>Riki Widiantoro & Savina Lutfia N | kelompok 6 | kelas 6C</h2>";
+echo "<h2>Riki Widiantoro (18532969) & Savina Lutfia N. (18532976) | kelompok 6 | kelas 6C</h2>";
 
 
 // pow()
@@ -85,19 +85,19 @@ echo "<h2>sin()</h2>";
 $angka2 = 10;
 echo "variabel2 = " . $angka2;
 echo "<br>";
-echo sin($angka2);
+echo sin($angka2); // hasil sin(10)
 
 
 // cos()
 // untuk mengembalikan kosinus sebuah angka
 echo "<h2>cos()</h2>";
-echo cos($angka2);
+echo cos($angka2); // hasil cos(10)
 
 
 // tan()
 // untuk mengembalikan tangen sebuah angka
 echo "<h2>tan()</h2>";
-echo tan($angka2);
+echo tan($angka2); // hasil tan(10)
 
 echo "<br><br><br><br><br><br>";
 
