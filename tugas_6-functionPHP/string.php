@@ -1,15 +1,17 @@
 <?php
 // Nama = Riki Widiantoro & Savina Lutfia N
 // Kelompok 6 | kelas 6C
-echo "<h2>Riki Widiantoro & Savina Lutfia N | kelompok 6 | kelas 6C</h2>";
+echo "<h2>Riki Widiantoro (18532969) & Savina Lutfia N. (18532976) | kelompok 6 | kelas 6C</h2>";
 
 
 // strlen()
 // untuk mengetahui panjang dari sebuah string
-// contoh dibawah nama+spasi berjumlah 15, jadi fungsi strlen menghitung nama+spasi
 echo "<h2>strlen()</h2>";
-$riki = 'Riki Widiantoro';
+$riki = 'Riki Widiantoro'; // nama+spasi berjumlah 15, jadi fungsi strlen menghitung nama+spasi
+$savina = "Savina Lutvia Nasta'in"; // nama+spasi+karakter khusus berjumlah 22
+
 echo "<p>panjang string Riki Widiantoro : ". strlen($riki) ." </p>";
+echo "<p>panjang string Savina Lutvia Nasta'in : ". strlen($savina) ." </p>";
 
 echo "<br><br><br>";
 
@@ -75,12 +77,18 @@ echo "<br><br><br>";
 
 
 // htmlspecialchars()
+// untuk menampilkan tag php apa saja didalamnya, akan lebih kompleks jika fugsi htmlspecialchars ini digunakan dalam contoh kasus form input user, guna agar si user tidak mengetikkan inputan selain yg di minta, jika si user mengetikan tag html maka akan langsung ketahuan dalam database.
+// saya sendiri sudah pernah membuatnya dengan contoh kasus CRUD php sederhana
+// berikut contoh sederhana htmlspecialchars
 echo "<h2>htmlspecialchars()</h2>";
-// $nama = "<label>Nama : </label><input type='text' name='nama'>";
-// echo
-// echo $nama;
 
-// $aman = htmlspecialchars($nama['nama']);
+$nama = htmlspecialchars("<p>hai</p>");
+
+$link = htmlspecialchars("<a href='#'>klik</a>");
+
+echo $nama;
+echo "<br><br>";
+echo $link;
 
 
 echo "<br><br><br><br><br>";
