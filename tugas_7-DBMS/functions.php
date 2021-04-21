@@ -30,4 +30,31 @@ function tambah($data) {
 
     return mysqli_affected_rows($koneksi);
 }
+
+// hapus
+function hapus($id) {
+    global $koneksi;
+
+    mysqli_query($koneksi, "DELETE FROM tugasdbms WHERE id = $id");
+
+    return mysqli_affected_rows($koneksi);
+}
+
+// edit
+function edit($data) {
+    global $koneksi;
+
+    // ambil data dari tiap elemen form
+    $id = $data["id"];
+    $nim = htmlspecialchars($data["nim"]);
+    $nama = htmlspecialchars($data["nama"]);
+    $alamat = htmlspecialchars($data["alamat"]);
+
+    // update
+    $update = "UPDATE tugasdbms SET nim = '$nim', nama = '$nama', alamat = '$alamat' WHERE id = $id";
+
+    mysqli_query($koneksi, $update);
+
+    return mysqli_affected_rows($koneksi);
+}
 ?>
