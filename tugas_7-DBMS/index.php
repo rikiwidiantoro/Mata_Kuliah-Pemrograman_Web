@@ -3,9 +3,6 @@ require "functions.php";
 
 $nama = tampil("SELECT * FROM tugasdbms");
 
-var_dump($nama);
-
-
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +15,11 @@ var_dump($nama);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
-    <h1>Administrasi Data</h1>
+
+    <a href="logout.php">Logout</a>
+    <br>
+    
+    <h1>Administrasi Data Teknik Informatika 6C</h1>
 
     <a href="tambah.php">Tambah Data</a>
     <br><br>
@@ -40,8 +41,8 @@ var_dump($nama);
                 <td><?php echo $data['nama']; ?></td>
                 <td><?php echo $data['alamat']; ?></td>
                 <td>
-                    <a href="">edit</a>
-                    <a href="">hapus</a>
+                    <a href="edit.php?id=<?php echo $data['id']; ?>">edit</a>
+                    <a href="hapus.php?id=<?php echo $data['id']; ?>" onclick="return confirm('Anda yakin ingin menghapus data <?= $data['nama']; ?>');">hapus</a>
                 </td>
             </tr>
         <?php $i++; ?>
@@ -51,7 +52,7 @@ var_dump($nama);
 
     <br><br>
     <footer>
-    <p class="footer">&copy Copyright 2021 | <i class="fab fa-github"></i> <a href="https://github.com/Riki-Toro" target="_blank">Riki-Toro</a>  |  <i class="fab fa-instagram"> @karya_rw</i></p>
+    <p class="footer">&copy Copyright 2021 | <i class="fab fa-github"></i> <a href="https://github.com/Riki-Toro" target="_blank">Riki-Toro</a>  |  <i class="fab fa-instagram"> @karya.rw</i> |  <i class="fab fa-instagram"> @saviinalutfinas</i></p>
     </footer>
 </body>
 </html>
