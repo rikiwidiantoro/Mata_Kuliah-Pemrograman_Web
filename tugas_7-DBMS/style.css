@@ -1,0 +1,121 @@
+/* Riki Widiantoro (18532969) & Savina Lutfia N. (18532974) */
+/* Kelompok 6 | Teknik Informatika 6C */
+
+/* login */
+.login-h1 {
+    text-align: center;
+}
+.login-form{
+    border: 1px solid black;
+    padding: 20px;
+    width: 400px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 3px black;
+}
+.login-tabel {
+    margin: auto;
+    text-align: center;
+}
+.login-button {
+    padding: 5px 12px;
+}
+footer {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* index */
+.index-nav {
+    height: 60px;
+    position: relative;
+}
+/* .index-nav .index-logout {
+    float: right;
+    clear: both;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+} */
+/* .index-nav .index-h1 {
+    float: left;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+} */
+.index-isi {
+    margin: auto;
+}
+.index-tabel {
+    margin: 70px auto;
+}
+/* .index-tambah {
+    position: absolute;
+    top: 60px;
+    left: 500px;
+    margin: 40px auto 5px;
+} */
+.index-tambah button {
+    padding: 4px 8px;
+}
+
+@media screen and (min-width: 450px) {
+    .index-nav .index-logout {
+        width: 50px;
+        float: right;
+        clear: both;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+    }
+    .index-nav .index-h1 {
+        width: 380px;
+        float: left;
+        position: absolute;
+        top: -10px;
+        left: 0px;
+        font-size: 25px;
+    }
+    .index-tambah {
+        position: absolute;
+        top: 65px;
+        left: 20px;
+        margin: 40px auto 5px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .index-nav .index-logout {
+        width: 100px;
+        float: right;
+        clear: both;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .index-nav .index-h1 {
+        width: 1000px;
+        float: left;
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 33px;
+    }
+    .index-tambah {
+        position: absolute;
+        top: 65px;
+        left: 475px;
+        margin: 40px auto 5px;
+    }
+}
+
+
+/* edit & tambah*/
+.body-edit, .body-tambah {
+    margin: 0px 40px;
+}
+.td-edit-simpan, .td-tambah-tambah{
+    text-align: center;
+}
+.edit-simpan {
+    padding: 4px 8px;
+}
