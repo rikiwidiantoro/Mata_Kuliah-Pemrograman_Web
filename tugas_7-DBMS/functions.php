@@ -1,6 +1,7 @@
 <?php
 // koneksi
-$koneksi = mysqli_connect("localhost", "root", "", "pemrogramanweb");
+// $koneksi = mysqli_connect("localhost", "root", "", "pemrogramanweb");
+$koneksi = mysqli_connect("sql305.epizy.com", "epiz_28434338", "puC5oztm4l8", "epiz_28434338_pemrogramanweb");
 
 // tampil
 function tampil($data) {
