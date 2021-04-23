@@ -27,7 +27,7 @@ $nama = tampil("SELECT * FROM tugasdbms");
         <a href="logout.php" class="index-logout">Logout</a>
         <br>
         
-        <h1 class="index-h1">Administrasi Data Mahasiswa Teknik Informatika 6C</h1>
+        <h1 class="index-h1">Administrasi Data 6C</h1>
     </div>
 
     <hr>
