@@ -55,6 +55,10 @@ if( isset($_POST["login"]) ) {
 
         <h1 class="login-h1">Login</h1>
 
+        <div style="text-align:center; font-size:12px;">
+            <p>login admin, username: rikitoro & password: abc123</p>
+        </div>
+
         <?php if( isset($error) ) : ?>
             <p style="color:red; text-align: center;">username / password salah!</p>
         <?php endif; ?>
@@ -75,7 +79,7 @@ if( isset($_POST["login"]) ) {
         <br><br>
 
         <footer>
-            <p>Riki Widiantoro (18532969) | Savina Lutfia N.(18532976) | 6C</p>
+            <p>Riki Widiantoro(18532969) | Savina Lutfia N.(18532976) | 6C</p>
             <p class="footer">&copy 2021 | <i class="fab fa-github"></i> <a href="https://github.com/Riki-Toro" target="_blank">Riki-Toro</a>  |  <i class="fab fa-instagram"> @karya.rw</i> |  <i class="fab fa-instagram"> @saviinalutfinas</i></p>
         </footer>
     </form>
