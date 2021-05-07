@@ -1,0 +1,30 @@
+.isi {
+    width: 400px;
+    height: 500px;
+    /* background-color: #acacac; */
+    margin: auto;
+    border: 1px solid rgb(0, 0, 0);
+}
+.isi-hasil {
+    width: 400px;
+    height: 100px;
+    background-color: rgb(139, 139, 139);
+}
+.isi-atas {
+    width: 400px;
+    height: 200px;
+    border-top: 1px solid black;
+}
+.isi-atas .komputer p {
+    margin: 50px auto;
+    width: 200px;
+    height: 100px;
+    border: 1px solid rgb(0, 0, 0);
+    line-height: 100px;
+}
+.isi-bawah {
+    width: 400px;
+    height: 200px;
+    border-top: 1px solid black;
+    line-height: 200px;
+}
