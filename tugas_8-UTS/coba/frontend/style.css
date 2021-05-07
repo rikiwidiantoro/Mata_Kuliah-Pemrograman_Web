@@ -4,11 +4,18 @@
     /* background-color: #acacac; */
     margin: auto;
     border: 1px solid rgb(0, 0, 0);
+    position: relative;
 }
 .isi-hasil {
     width: 400px;
     height: 100px;
     background-color: rgb(139, 139, 139);
+}
+.isi-hasil .hasilnya p {
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
 }
 .isi-atas {
     width: 400px;
@@ -21,6 +28,21 @@
     height: 100px;
     border: 1px solid rgb(0, 0, 0);
     line-height: 100px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.vs {
+    position: absolute;
+    border: 1px solid black;
+    left: 44%;
+    top: 56%;
+    z-index: 1;
+    background-color: white;
+    padding: 0px 14px;
+}
+.vs p {
+    font-size: 20px;
+    margin-top: 6px; 
 }
 .isi-bawah {
     width: 400px;
