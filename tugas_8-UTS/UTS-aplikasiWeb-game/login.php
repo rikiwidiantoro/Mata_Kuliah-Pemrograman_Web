@@ -1,3 +1,33 @@
+<?php
+
+require_once 'functions.php';
+
+// cek apakah tombol login sudah ditekan apa belum
+if( isset($_POST["login"]) ) {
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // cek satu satu apakah ada username tertentu dalam tabel user
+    $result = mysqli_query($koneksi, "SELECT * FROM uts WHERE username = '$username'");
+
+    // cek username >> untuk menghitung berapa baris yg dikembalikan fungsi SELECT kalo ketemu nilainya 1, kalau nggak ada nilainya 0
+    if( mysqli_num_rows($result) === 1 ) {
+        // cek password
+        $cekpas = mysqli_fetch_assoc($result);
+        if( password_verify($password, $cekpas["password"]) ) { //kebalikan fungsi hash
+            header("Location: index.php");
+            exit;
+        }
+    }
+
+    $error = true;
+}
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -9,25 +39,41 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
         <!-- my css -->
-        <link rel="stylesheet" href="css/style.css">
+        <style>
+            .container {
+                width: 450px;
+                height: auto;
+                background-color: grey;
+                border-radius: 10px;
+            }
+            .error {
+                color: red;
+                font-style: italic;
+            }
+        </style>
 
         <title>Login</title>
     </head>
-    <body class="registrasi">
+    <body>
 
         <form action="" method="post">
-            <div class="container register-con mt-5 p-5">
+            <div class="mt-5 p-5 justify-content-center container">
                 <h3>Halaman Login</h3>
+
+                <?php if( isset($error) ) : ?>
+                    <p class="error">username / password salah!</p>
+                <?php endif; ?>
+
                 <div class="input-group my-3 mt-4">
                     <label class="input-group-text" for="username">Username</label>
-                    <input type="text" class="form-control" placeholder="" aria-label="username" aria-describedby="username" name="username" autocomplete="off" id="username">
+                    <input type="text" class="form-control" placeholder="" aria-label="username" aria-describedby="username" name="username" autocomplete="off" id="username" autofocus>
                 </div>
                 <div class="input-group mb-4">
                     <label class="input-group-text" for="password">Password</label>
                     <input type="password" class="form-control" placeholder="" aria-label="password" aria-describedby="password" name="password" autocomplete="off" id="password">
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="submit" name="button" class="btn btn-dark">Login</button>
+                    <button type="submit" name="login" class="btn btn-dark">Login</button>
                 </div>
 
                 <a href="registrasi.php">buat akun</a>
