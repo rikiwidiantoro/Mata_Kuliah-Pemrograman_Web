@@ -1,3 +1,22 @@
+<?php
+
+require_once "functions.php";
+
+// tombol register sudah di tekan apa belum
+if( isset($_POST['button']) ) {
+    if( registrasi($_POST) > 0 ) {
+        echo "<script>
+            alert('Registrasi berhasil!');
+        </script>";
+    } else {
+        echo mysqli_error($koneksi);
+    }
+}
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -9,18 +28,25 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
         <!-- my css -->
-        <link rel="stylesheet" href="css/style.css">
+        <style>
+            .container {
+                width: 450px;
+                height: auto;
+                background-color: grey;
+                border-radius: 10px;
+            }
+        </style>
 
         <title>Registrasi</title>
     </head>
-    <body class="registrasi">
+    <body>
 
         <form action="" method="post">
-            <div class="container register-con mt-5 p-5">
+            <div class="mt-5 p-5 justify-content-center container">
                 <h3>Halaman Registrasi</h3>
                 <div class="input-group my-3 mt-4">
                     <label class="input-group-text" for="username">Username</label>
-                    <input type="text" class="form-control" placeholder="" aria-label="username" aria-describedby="username" name="username" autocomplete="off" id="username">
+                    <input type="text" class="form-control" placeholder="" aria-label="username" aria-describedby="username" name="username" autocomplete="off" id="username" autofocus>
                 </div>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="password">Password</label>
@@ -33,7 +59,7 @@
                 <div class="d-grid gap-2">
                     <button type="submit" name="button" class="btn btn-dark">Registrasi</button>
                 </div>
-                
+
                 <a href="login.php">kembali</a>
 
                 <p class="mt-3">&copy; 2021 | Riki Widiantoro | <a href="https://github.com/Riki-Toro" target="_blank" class="white-text"><i class="fab fa-github"></i> Riki-Toro </a> | <i class="fab fa-instagram"> @karya.rw</i></p>
