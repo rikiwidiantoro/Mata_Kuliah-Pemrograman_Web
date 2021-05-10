@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+
+// jika sudah login jalankan session ini
+if( isset($_SESSION["login"]) ) {
+    header("Location: index.php");
+    exit;
+}
+
 
 require_once "functions.php";
 
@@ -11,6 +20,7 @@ if( isset($_POST['button']) ) {
     } else {
         echo mysqli_error($koneksi);
     }
+
 }
 
 
