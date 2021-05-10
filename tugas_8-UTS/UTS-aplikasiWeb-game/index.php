@@ -1,8 +1,14 @@
+<?php
+session_start();
+// cek session
+if( !isset($_SESSION["login"]) ) {
+    header("Location: login.php");
+    exit;
+}
 
+require_once 'functions.php';
 
-
-
-
+?>
 
 
 <!doctype html>
@@ -25,7 +31,7 @@
         <!-- header -->
         <header class="text-center mb-3">
             <h1>Game Gunting Batu Kertas</h1>
-            <h3>Tugas UTS Pemrograman Web</h3>
+            <h3>Tugas UTS Pemrograman Web | <a href="logout.php" type="button" class="btn btn-outline-secondary btn-sm">Logout</a></h3>
         </header>
 
 
