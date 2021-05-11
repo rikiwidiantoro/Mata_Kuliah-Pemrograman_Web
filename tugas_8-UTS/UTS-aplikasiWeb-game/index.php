@@ -24,10 +24,16 @@ require_once 'functions.php';
         <!-- my css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <style>
+            footer {
+                font-size: 14px;
+                line-height: 5px;
+            }
+        </style>
 
         <title>UTS Game</title>
     </head>
-    <body>
+    <body class="index">
         <!-- header -->
         <header class="text-center mb-3">
             <h1>Game Gunting Batu Kertas</h1>
@@ -59,8 +65,9 @@ require_once 'functions.php';
 
 
         <!-- footer -->
-        <footer class="text-center mt-3">
-            <p>&copy; 2021 | Riki Widiantoro | <a href="https://github.com/Riki-Toro" target="_blank" class="white-text"><i class="fab fa-github"></i> Riki-Toro </a> | <i class="fab fa-instagram"> @karya.rw</i></p>
+        <footer class="text-center mt-4">
+            <p>Riki Widiantoro (18532969) | Savina Lutfia N.(18532976) | 6C</p>
+            <p>&copy; 2021 | <a href="https://github.com/Riki-Toro" target="_blank" class="white-text"><i class="fab fa-github"></i> Riki-Toro </a> | <i class="fab fa-instagram"> @karya.rw</i> | <i class="fab fa-instagram"> @saviinalutfinas</i></p>
         </footer>
 
 
