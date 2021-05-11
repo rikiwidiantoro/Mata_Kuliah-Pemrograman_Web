@@ -1,7 +1,7 @@
 <?php
 // koneksi ke database
 // (nama host database/hostname, username mysql, password, database)
-$koneksi = mysqli_connect("localhost", "root", "", "pemrogramanweb");
+$koneksi = mysqli_connect("localhost", "root", "", "utspemrogramanweb");
 
 
 // function registrasi
@@ -15,7 +15,7 @@ function registrasi($data) {
     $password2 = mysqli_real_escape_string($koneksi, $data["password2"]);
 
     // cek username & password sudah ada apa belum
-    $cek = mysqli_query($koneksi, "SELECT username FROM uts WHERE username = '$username'");
+    $cek = mysqli_query($koneksi, "SELECT username FROM users WHERE username = '$username'");
     if( mysqli_fetch_assoc($cek) ) {
         echo "<script>
                 alert('Username sudah terdaftar!');
@@ -36,7 +36,7 @@ function registrasi($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
     
     // tambahkan data registrasi baru ke database
-    mysqli_query($koneksi, "INSERT INTO uts VALUES('', '$username', '$password')");
+    mysqli_query($koneksi, "INSERT INTO users VALUES('', '$username', '$password')");
 
     return mysqli_affected_rows($koneksi); //untuk menghasilkan angka 1 jika berhasil dan -1 jika gagal
 
