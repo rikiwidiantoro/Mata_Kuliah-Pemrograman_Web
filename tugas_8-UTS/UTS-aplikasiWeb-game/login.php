@@ -102,7 +102,7 @@ if( isset($_POST["login"]) ) {
 
                 <footer class="footer mt-5 text-center">
                     <p>Riki Widiantoro (18532969) | Savina Lutfia N.(18532976) | 6C</p>
-                    <p>&copy; 2021 | <a href="https://github.com/Riki-Toro" target="_blank" class="white-text"><i class="fab fa-github"></i> Riki-Toro </a> | <i class="fab fa-instagram"> @karya.rw</i> | <i class="fab fa-instagram"> @saviinalutfinas</i></p>
+                    <p>&copy; 2021 | <a href="https://github.com/rikiwidiantoro" target="_blank" class="white-text"><i class="fab fa-github"></i> rikiwidiantoro </a> | <i class="fab fa-instagram"> @karya.rw</i> | <i class="fab fa-instagram"> @saviinalutfinas</i></p>
                 </footer>
             </div>
         </form>
